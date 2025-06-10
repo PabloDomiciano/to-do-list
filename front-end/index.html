@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="todo-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i> Gerenciador de Tarefas</h1>
+            <p class="subtitle">Organize suas atividades diárias</p>
+        </header>
+
+        <main>
+            <section class="task-form-section">
+                <form id="todo-form">
+                    <div class="form-group">
+                        <label for="task-title-input">Título:</label>
+                        <input type="text" id="task-title-input" placeholder="O que precisa ser feito?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-desc-input">Descrição (opcional):</label>
+                        <textarea id="task-desc-input" rows="2" placeholder="Detalhes da tarefa..."></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="priority-select">Prioridade:</label>
+                            <select id="priority-select">
+                                <option value="alta">Alta</option>
+                                <option value="media" selected>Média</option>
+                                <option value="baixa">Baixa</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-plus"></i> Adicionar Tarefa
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="task-controls">
+                <div class="filters">
+                    <label for="filter-select">Filtrar:</label>
+                    <select id="filter-select">
+                        <option value="todas">Todas</option>
+                        <option value="pendentes">Pendentes</option>
+                        <option value="concluidas">Concluídas</option>
+                        <option value="alta">Prioridade Alta</option>
+                        <option value="media">Prioridade Média</option>
+                        <option value="baixa">Prioridade Baixa</option>
+                    </select>
+                </div>
+
+                <div id="task-count" class="task-counter">0 tarefas</div>
+            </section>
+
+            <section class="task-list-section">
+                <ul id="todo-list" class="task-list">
+                    <!-- As tarefas serão carregadas aqui via JavaScript -->
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Sistema de gerenciamento de tarefas - © 2025 Dev: Pablo H.</p>
+        </footer>
+    </div>
+
+    <script src="todo-script.js"></script>
+</body>
+
+</html>
